@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import hrms.northwind.core.utilities.results.DataResult;
 import hrms.northwind.core.utilities.results.Result;
 import hrms.northwind.entities.concretes.Product;
+import hrms.northwind.entities.dtos.ProductWithCategoryDto;
 
 public interface ProductService {
 	
@@ -31,5 +32,7 @@ public interface ProductService {
 	DataResult<List<Product>> getByProductNameStartsWith(String productName);
 	
 	DataResult<List<Product>> getByNameAndCategory(String productName,int categoryId);
+	
+	DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails();
 
 }
